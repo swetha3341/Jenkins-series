@@ -4,7 +4,7 @@ pipeline {
 		stages {
 	stage('Clone Repo') {
 		steps {
-				git ' https://github.com/swetha3341/Jenkins-series.git '
+				git 'https://github.com/swetha3341/Jenkins-series.git'
 			}
 		}
 	stage('Build') {
@@ -15,10 +15,10 @@ pipeline {
 		}
 	post {
         	success {
-            		echo ' Build completed successfully!'
+            		echo 'Build completed successfully!'
         }
         	failure {
-            		echo ' Build failed!'
+            		echo 'Build failed!'
         }
     }
 }
