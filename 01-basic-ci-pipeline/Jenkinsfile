@@ -9,8 +9,9 @@ pipeline {
 		}
 	stage('Build') {
 		steps{
+			dir('01-basic-ci-pipeline') { 
 			sh 'chmod +x 01-basic-ci-pipeline/hello.sh'
-			sh './01-basic-ci-pipeline/hello.sh'
+			sh './hello.sh'
 		     }
 		}
 		}		
