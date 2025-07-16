@@ -1,0 +1,27 @@
+pipeline {
+	agent any 
+	
+		stages {
+	stage('Clone Repo') {
+		steps {
+				git ' https://github.com/swetha3341/Jenkins-series.git '
+			}
+		}
+	stage('Build') {
+		steps{
+			sh 'chmod +x 01-basic-ci-pipeline/hello.sh'
+			sh './01-basic-ci-pipeline/hello.sh'
+		     }
+		}
+	post {
+        	success {
+            		echo ' Build completed successfully!'
+        }
+        	failure {
+            		echo ' Build failed!'
+        }
+    }
+}
+
+}
+			
